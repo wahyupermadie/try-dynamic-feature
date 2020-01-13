@@ -3,6 +3,7 @@
     package="com.godohdev.tvshow">
 
     <dist:module
+        dist:onDemand="true"
         dist:instant="false"
         dist:title="@string/title_tvshow">
         <dist:delivery>
