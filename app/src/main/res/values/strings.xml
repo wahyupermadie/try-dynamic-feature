@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">try-dynamic-feature</string>
+    <string name="title_tvshow">Tv Show Module</string>
 </resources>
