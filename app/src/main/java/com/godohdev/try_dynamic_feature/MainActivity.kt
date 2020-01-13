@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
         buttonOpenNewsModule.setOnClickListener {
             val intent = Intent()
-                .setClassName(this, "com.godohdev.news_feature.newsloader.NewsLoaderActivity")
+                .setClassName(this, "com.godohdev.tvshow.TvShowActivity")
             startActivity(intent)
         }
         buttonDeleteNewsModule.setOnClickListener {
