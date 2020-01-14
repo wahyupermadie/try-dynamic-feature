@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
+    android:id="@+id/root"
+    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
-    <Button android:layout_width="wrap_content"
+    <fragment
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:id="@+id/nav_host_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/main_navigation_graph" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnvMain"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonClick"
-        android:text="Click to Download News Module"
-        android:layout_centerInParent="true"/>
-    <Button android:layout_width="wrap_content"
-        android:text="Open News Module"
-        android:id="@+id/buttonOpenNewsModule"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_below="@+id/buttonClick"
-        android:layout_centerInParent="true"/>
-    <Button android:layout_width="wrap_content"
-        android:text="Delete News Module"
-        android:id="@+id/buttonDeleteNewsModule"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_below="@+id/buttonOpenNewsModule"
-        android:layout_centerInParent="true"/>
-</RelativeLayout>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bnv_menu" />
+</LinearLayout>

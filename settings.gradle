@@ -1,2 +1,2 @@
-include ':app', ':tvshow', ':navigation'
+include ':app', ':base', 'feature:tvshow', ':navigation', 'feature:movies'
 rootProject.name='try-dynamic-feature'

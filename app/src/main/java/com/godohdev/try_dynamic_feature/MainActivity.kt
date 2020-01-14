@@ -6,6 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
+import com.godohdev.navigation.NavigationCommand
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.play.core.splitinstall.SplitInstallManager
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.google.android.play.core.splitinstall.SplitInstallRequest
@@ -24,6 +30,13 @@ class MainActivity : AppCompatActivity() {
 
         initDynamicModules()
         setClickListeners()
+        initUi()
+    }
+
+    private fun initUi() {
+//        bnvMain.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        val navController = findNavController(R.id.nav_host_fragment)
+        bnvMain.setupWithNavController(navController)
     }
 
     private fun initDynamicModules() {
@@ -35,33 +48,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setClickListeners() {
-        buttonClick.setOnClickListener {
-            if (!isDynamicFeatureDownloaded(DYNAMIC_FEATURE)) {
-                downloadFeature()
-            } else {
-                buttonDeleteNewsModule.visibility = View.VISIBLE
-                buttonOpenNewsModule.visibility = View.VISIBLE
-            }
-        }
-
-        buttonOpenNewsModule.setOnClickListener {
-            val intent = Intent()
-                .setClassName(this, "com.godohdev.tvshow.TvShowActivity")
-            startActivity(intent)
-        }
-        buttonDeleteNewsModule.setOnClickListener {
-            val list = ArrayList<String>()
-            list.add(DYNAMIC_FEATURE)
-            uninstallDynamicFeature(list)
-        }
+//        buttonDeleteNewsModule.setOnClickListener {
+//            val list = ArrayList<String>()
+//            list.add(DYNAMIC_FEATURE)
+//            uninstallDynamicFeature(list)
+//        }
     }
 
     private fun uninstallDynamicFeature(list: List<String>) {
-        splitInstallManager.deferredUninstall(list)
-            .addOnSuccessListener {
-                buttonDeleteNewsModule.visibility = View.GONE
-                buttonOpenNewsModule.visibility = View.GONE
-            }
+//        splitInstallManager.deferredUninstall(list)
+//            .addOnSuccessListener {
+//                buttonDeleteNewsModule.visibility = View.GONE
+//                buttonOpenNewsModule.visibility = View.GONE
+//            }
     }
 
     private fun isDynamicFeatureDownloaded(feature: String): Boolean {
@@ -75,9 +74,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("DATA_GUE"," "+it.localizedMessage)
             }
             .addOnSuccessListener {
-                Log.d("DATA_GUE"," "+it)
-                buttonOpenNewsModule.visibility = View.VISIBLE
-                buttonDeleteNewsModule.visibility = View.VISIBLE
+
             }
             .addOnCompleteListener {
                 Log.d("DATA_GUE", it.result.toString())
