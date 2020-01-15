@@ -1,8 +1,8 @@
 package com.godohdev.movies
 
+//import com.godohdev.movies.di.DaggerMoviesComponent
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,10 +12,6 @@ import com.godohdev.base.di.CoreComponent
 import com.godohdev.base.di.DaggerCoreComponent
 import com.godohdev.movies.databinding.FragmentMoviesBinding
 import com.godohdev.movies.di.DaggerMoviesComponent
-//import com.godohdev.movies.di.DaggerMoviesComponent
-import dagger.android.support.AndroidSupportInjection
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 

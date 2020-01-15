@@ -1,7 +1,6 @@
 package com.godohdev.tvshow
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,10 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.godohdev.base.BaseFragment
 import com.godohdev.base.data.network.ApiService
-import com.godohdev.try_dynamic_feature.coreComponent
 import com.godohdev.tvshow.databinding.FragmentTvShowBinding
-import com.godohdev.tvshow.di.DaggerTvShowComponent
-import dagger.android.support.AndroidSupportInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
