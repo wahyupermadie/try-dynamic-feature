@@ -45,10 +45,4 @@ class NetworkModule {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
     }
-
-    @Provides
-    @Singleton
-    fun apiService(retrofit: Retrofit): ApiService {
-        return retrofit.create(ApiService::class.java)
-    }
 }

@@ -6,7 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.godohdev.base.BaseFragment
+import com.godohdev.base.base.BaseFragment
 import com.godohdev.base.data.network.ApiService
 import com.godohdev.tvshow.databinding.FragmentTvShowBinding
 import io.reactivex.android.schedulers.AndroidSchedulers

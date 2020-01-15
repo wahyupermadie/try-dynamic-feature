@@ -1,4 +1,4 @@
-package com.godohdev.base
+package com.godohdev.base.base
 
 import android.annotation.SuppressLint
 import android.os.Bundle
