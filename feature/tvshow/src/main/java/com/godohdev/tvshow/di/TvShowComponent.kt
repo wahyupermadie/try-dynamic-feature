@@ -3,8 +3,6 @@ package com.godohdev.tvshow.di
 import androidx.fragment.app.Fragment
 import com.godohdev.base.di.CoreComponent
 import com.godohdev.base.di.FeatureScope
-import com.godohdev.tvshow.TvShowFragment
-import dagger.BindsInstance
 import dagger.Component
 
 
@@ -15,7 +13,7 @@ import dagger.Component
  *
  **/
 
-@Component(modules = [NetworkModules::class], dependencies = [CoreComponent::class])
+@Component(modules = [TvNetworkModule::class], dependencies = [CoreComponent::class])
 @FeatureScope
 interface TvShowComponent {
     @Component.Builder

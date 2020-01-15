@@ -1,9 +1,6 @@
 package com.godohdev.movies.di
 
-import android.app.Application
-import android.content.Context
 import androidx.fragment.app.Fragment
-import com.godohdev.base.base.BaseComponent
 import com.godohdev.base.di.CoreComponent
 import com.godohdev.base.di.FeatureScope
 import com.godohdev.movies.MoviesFragment
@@ -18,7 +15,7 @@ import dagger.Component
  *
  **/
 
-@Component(modules = [NetworkModules::class], dependencies = [CoreComponent::class])
+@Component(modules = [MoviesNetworkModule::class], dependencies = [CoreComponent::class])
 @FeatureScope
 interface MoviesComponent {
     @Component.Builder

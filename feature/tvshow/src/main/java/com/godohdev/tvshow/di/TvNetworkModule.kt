@@ -20,7 +20,7 @@ import javax.inject.Singleton
  **/
 
 @Module
-class NetworkModules {
+class TvNetworkModule {
     @Provides
     @Singleton
     fun apiService(retrofit: Retrofit): ApiService {
