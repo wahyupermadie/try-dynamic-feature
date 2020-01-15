@@ -29,5 +29,6 @@ class MoviesFragment : BaseFragment(){
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         (requireActivity()).title = "My title"
+
     }
 }
