@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.godohdev.tvshow">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <dist:module
         dist:instant="false"
         dist:onDemand="true"
@@ -14,7 +14,9 @@
         <dist:fusing dist:include="true" />
     </dist:module>
 
-    <application>
+    <application
+        android:name="com.godohdev.try_dynamic_feature.CoreApplication"
+        >
 
     </application>
 

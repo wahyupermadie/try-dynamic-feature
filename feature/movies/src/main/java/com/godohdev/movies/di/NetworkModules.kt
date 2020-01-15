@@ -1,4 +1,4 @@
-package com.godohdev.base.di.modules
+package com.godohdev.movies.di
 
 import com.godohdev.base.BuildConfig
 import com.godohdev.base.data.network.ApiService
@@ -20,7 +20,7 @@ import javax.inject.Singleton
  **/
 
 @Module
-class NetworkModule {
+class NetworkModules {
     @Provides
     fun provideOkHttpClient(interceptor: HttpLoggingInterceptor): OkHttpClient =
         OkHttpClient.Builder().addInterceptor(interceptor).build()

@@ -15,16 +15,15 @@ import javax.inject.Singleton
  * Android Engineer
  *
  **/
-
-@Singleton
 @Component(
-    modules = [AndroidInjectionModule::class, NetworkModule::class]
+    modules = [NetworkModule::class]
 )
+@Singleton
 interface CoreComponent {
     @Component.Builder
     interface Builder {
         fun build() : CoreComponent
     }
-
-    fun provideOkHttp() : OkHttpClient
 }
+
+

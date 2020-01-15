@@ -10,6 +10,8 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.godohdev.base.data.network.ApiService
+import com.godohdev.base.di.DaggerCoreComponent
 import com.godohdev.navigation.NavigationCommand
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.play.core.splitinstall.SplitInstallManager
@@ -17,7 +19,14 @@ import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.google.android.play.core.splitinstall.SplitInstallRequest
 import com.google.android.play.core.splitinstall.SplitInstallStateUpdatedListener
 import com.google.android.play.core.splitinstall.model.SplitInstallSessionStatus
+import dagger.android.AndroidInjection
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
     lateinit var splitInstallManager: SplitInstallManager
@@ -28,14 +37,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        MainApplication.coreComponent(this)
         initDynamicModules()
         setClickListeners()
         initUi()
     }
 
+    @SuppressLint("CheckResult")
     private fun initUi() {
-//        bnvMain.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         val navController = findNavController(R.id.nav_host_fragment)
         bnvMain.setupWithNavController(navController)
     }

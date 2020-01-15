@@ -1,12 +1,9 @@
-package com.godohdev.movies.di
+package com.godohdev.tvshow.di
 
-import android.app.Application
-import android.content.Context
 import androidx.fragment.app.Fragment
-import com.godohdev.base.base.BaseComponent
 import com.godohdev.base.di.CoreComponent
 import com.godohdev.base.di.FeatureScope
-import com.godohdev.movies.MoviesFragment
+import com.godohdev.tvshow.TvShowFragment
 import dagger.BindsInstance
 import dagger.Component
 
@@ -20,13 +17,11 @@ import dagger.Component
 
 @Component(modules = [NetworkModules::class], dependencies = [CoreComponent::class])
 @FeatureScope
-interface MoviesComponent {
+interface TvShowComponent {
     @Component.Builder
     interface Builder {
-        @BindsInstance
-        fun fragmentMovies(moviesFragment: MoviesFragment) : Builder
         fun coreComponent(coreComponent: CoreComponent) : Builder
-        fun build() : MoviesComponent
+        fun build() : TvShowComponent
     }
 
     fun inject(fragment: Fragment)

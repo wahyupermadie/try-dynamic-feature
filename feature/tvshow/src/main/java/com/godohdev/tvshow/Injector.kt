@@ -1,0 +1,27 @@
+@file:JvmName("Injector")
+package com.godohdev.tvshow
+
+import com.godohdev.try_dynamic_feature.coreComponent
+import com.godohdev.tvshow.di.DaggerTvShowComponent
+
+//import com.godohdev.tvshow.di.DaggerTvShowComponent
+
+
+/**
+ *
+ * Created by Wahyu Permadi on 2020-01-15.
+ * Android Engineer
+ *
+ **/
+
+
+
+fun inject(fragment: TvShowFragment) {
+
+    fragment.coreComponent()?.let {
+        DaggerTvShowComponent.builder()
+            .coreComponent(it)
+            .build()
+            .inject(fragment)
+    }
+}
