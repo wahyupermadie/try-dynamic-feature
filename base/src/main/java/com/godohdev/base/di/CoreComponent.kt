@@ -1,5 +1,6 @@
 package com.godohdev.base.di
 
+import com.godohdev.base.di.modules.BaseViewModelModule
 import com.godohdev.base.di.modules.NetworkModule
 import dagger.Component
 import okhttp3.OkHttpClient
@@ -15,7 +16,7 @@ import javax.inject.Singleton
  *
  **/
 @Component(
-    modules = [NetworkModule::class]
+    modules = [NetworkModule::class, BaseViewModelModule::class]
 )
 @Singleton
 interface CoreComponent {
