@@ -1,9 +1,16 @@
 package com.godohdev.tvshow.di
 
-import androidx.fragment.app.Fragment
+import com.godohdev.base.base.BaseComponent
 import com.godohdev.base.di.CoreComponent
 import com.godohdev.base.di.FeatureScope
+import com.godohdev.try_dynamic_feature.CoreApplication
+import com.godohdev.tvshow.TvShowFragment
+import dagger.BindsInstance
 import dagger.Component
+import dagger.android.AndroidInjection
+import dagger.android.support.AndroidSupportInjection
+import dagger.android.support.AndroidSupportInjectionModule
+import javax.inject.Singleton
 
 
 /**
@@ -13,14 +20,14 @@ import dagger.Component
  *
  **/
 
-@Component(modules = [TvNetworkModule::class], dependencies = [CoreComponent::class])
+@Component(modules = [AndroidSupportInjectionModule::class, FragmentBuilder::class, TvNetworkModule::class],
+    dependencies = [CoreComponent::class])
 @FeatureScope
-interface TvShowComponent {
+interface TvShowComponent : BaseComponent<TvShowFragment>{
     @Component.Builder
     interface Builder {
+        @BindsInstance fun fragment(fragment: TvShowFragment) : Builder
         fun coreComponent(coreComponent: CoreComponent) : Builder
         fun build() : TvShowComponent
     }
-
-    fun inject(fragment: Fragment)
 }

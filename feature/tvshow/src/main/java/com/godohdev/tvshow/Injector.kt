@@ -1,11 +1,9 @@
 @file:JvmName("Injector")
 package com.godohdev.tvshow
 
+import com.godohdev.try_dynamic_feature.CoreApplication.Companion.coreComponent
 import com.godohdev.try_dynamic_feature.coreComponent
 import com.godohdev.tvshow.di.DaggerTvShowComponent
-
-//import com.godohdev.tvshow.di.DaggerTvShowComponent
-
 
 /**
  *
@@ -20,7 +18,8 @@ fun inject(fragment: TvShowFragment) {
 
     fragment.coreComponent()?.let {
         DaggerTvShowComponent.builder()
-            .coreComponent(it)
+            .fragment(fragment)
+            .coreComponent(coreComponent(fragment.context!!))
             .build()
             .inject(fragment)
     }

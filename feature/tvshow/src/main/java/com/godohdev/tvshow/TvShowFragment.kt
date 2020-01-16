@@ -34,7 +34,6 @@ class TvShowFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        Log.d("DATA_GUE","DATA "+(apiService))
         apiService.getMoviesPopular()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())

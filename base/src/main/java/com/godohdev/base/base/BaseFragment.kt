@@ -13,7 +13,6 @@ import androidx.fragment.app.Fragment
  **/
 
 abstract class BaseFragment : Fragment(){
-    @SuppressLint("CheckResult")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
     }
