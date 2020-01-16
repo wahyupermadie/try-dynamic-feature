@@ -18,4 +18,6 @@ abstract class BaseViewModel : ViewModel(){
 
     private var _navigation = MutableLiveData<Event<NavigationCommand>>()
     val navigation : LiveData<Event<NavigationCommand>> get() = _navigation
+
+
 }

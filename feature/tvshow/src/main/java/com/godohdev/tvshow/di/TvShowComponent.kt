@@ -15,7 +15,7 @@ import dagger.android.support.AndroidSupportInjectionModule
  *
  **/
 
-@Component(modules = [AndroidSupportInjectionModule::class, FragmentBuilder::class, TvNetworkModule::class],
+@Component(modules = [AndroidSupportInjectionModule::class, FragmentBuilder::class, TvNetworkModule::class, ViewModelModule::class],
     dependencies = [CoreComponent::class])
 @FeatureScope
 interface TvShowComponent : BaseFragmentComponent<TvShowFragment> {
