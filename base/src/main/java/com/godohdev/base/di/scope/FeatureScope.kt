@@ -1,4 +1,4 @@
-package com.godohdev.base.di
+package com.godohdev.base.di.scope
 
 import javax.inject.Scope
 import kotlin.annotation.AnnotationRetention.RUNTIME

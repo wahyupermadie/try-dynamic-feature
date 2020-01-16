@@ -2,7 +2,7 @@ package com.godohdev.movies.di
 
 import androidx.fragment.app.Fragment
 import com.godohdev.base.di.CoreComponent
-import com.godohdev.base.di.FeatureScope
+import com.godohdev.base.di.scope.FeatureScope
 import com.godohdev.movies.MoviesFragment
 import dagger.BindsInstance
 import dagger.Component

@@ -12,13 +12,10 @@ import com.godohdev.tvshow.di.DaggerTvShowComponent
  *
  **/
 
-
-
 fun inject(fragment: TvShowFragment) {
 
     fragment.coreComponent()?.let {
         DaggerTvShowComponent.builder()
-            .fragment(fragment)
             .coreComponent(coreComponent(fragment.context!!))
             .build()
             .inject(fragment)
